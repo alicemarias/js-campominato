@@ -19,10 +19,18 @@ var bombaPresa = false;
 while (bombaPresa === false && (immissioniUtente < maxNumeriTentativi)) {
   var numeroUtente = prompt("dimmi un  numero da 1 a " + maxNumeriRandom );
 
-  if (verificoElementoArray(numeroUtente, bombe)) {
-    bombaPresa= true;
+  if (verificoElementoArray(numeroUtente, bombe) === true) {
+    bombaPresa = true;
+  } else {
+    immissioniUtente++;
   }
-  immissioniUtente++;
+}
+
+// stampo messaggio per utente
+if (bombaPresa === false) {
+  alert("hai vinto il tuo punteggio è... " + immissioniUtente);
+} else {
+  alert("bomba beccata, il tuo punteggio è .... " + immissioniUtente);
 }
 
 // il pc genera 16 numeri casuali
